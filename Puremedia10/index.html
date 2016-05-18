@@ -288,6 +288,7 @@
       
    </section> <!-- /Portfolio -->
 
+		
 
    <!-- Services Section
    ================================================== -->
@@ -298,13 +299,32 @@
    		<div class="twelve columns">
 
 	         <h1>Los Asombrosos servicios que proporciono<span>.</span></h1>
-
+         
 	         <hr />
 
 	         <p>A ami me gusta el tangananica a ti te gusta el tanganana, tangananica nica nica, tanganana todo lo sabe no sabe na
 	         </p>
-
-         </div>
+				 <p></p>
+				 <div id="piechart" style="width:400px;height:300px;"></div>
+				 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+                    <script type="text/javascript">
+					   google.load("visualization", "1", {packages:["corechart"]});
+				       google.setOnLoadCallback(drawChart);
+					   function drawChart() {
+					   var data = google.visualization.arrayToDataTable([
+					     ['Tiempo invertido', 'Porciento'],
+					     ['Fotografia',     60],
+					     ['Diseño web',     30],
+					     ['Camarografo',  10]
+					   ]);
+					   var options = {
+						 title: 'Visualisacion del tiempo en experinecia en los trabajos que he hecho',
+					     is3D: true,};
+					   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+					   chart.draw(data, options);
+					  }
+					   </script>
+		 </div>
 
       </div>
 
